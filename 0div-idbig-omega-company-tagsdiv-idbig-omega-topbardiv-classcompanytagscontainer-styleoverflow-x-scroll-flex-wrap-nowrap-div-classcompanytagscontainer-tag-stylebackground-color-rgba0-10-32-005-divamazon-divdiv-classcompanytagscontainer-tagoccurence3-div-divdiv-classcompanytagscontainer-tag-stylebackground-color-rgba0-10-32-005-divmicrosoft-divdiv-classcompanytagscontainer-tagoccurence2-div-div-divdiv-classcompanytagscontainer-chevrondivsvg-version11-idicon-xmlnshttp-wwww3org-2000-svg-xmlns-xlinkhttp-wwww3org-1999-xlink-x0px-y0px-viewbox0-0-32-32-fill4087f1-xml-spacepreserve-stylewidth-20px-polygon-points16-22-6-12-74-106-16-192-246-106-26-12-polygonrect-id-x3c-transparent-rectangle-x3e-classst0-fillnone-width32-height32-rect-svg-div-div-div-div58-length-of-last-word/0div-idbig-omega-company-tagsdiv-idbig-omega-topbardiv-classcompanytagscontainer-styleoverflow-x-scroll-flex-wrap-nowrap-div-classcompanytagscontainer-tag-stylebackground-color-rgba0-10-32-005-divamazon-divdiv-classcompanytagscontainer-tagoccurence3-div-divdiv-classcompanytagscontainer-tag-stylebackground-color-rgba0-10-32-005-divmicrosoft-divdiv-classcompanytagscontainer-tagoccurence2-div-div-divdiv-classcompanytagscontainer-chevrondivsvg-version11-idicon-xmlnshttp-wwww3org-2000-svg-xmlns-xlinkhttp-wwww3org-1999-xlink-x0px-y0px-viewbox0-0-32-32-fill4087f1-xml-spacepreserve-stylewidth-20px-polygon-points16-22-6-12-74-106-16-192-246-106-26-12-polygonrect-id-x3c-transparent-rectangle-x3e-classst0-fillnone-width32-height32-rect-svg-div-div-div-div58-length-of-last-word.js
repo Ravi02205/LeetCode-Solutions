@@ -3,10 +3,11 @@
  * @return {number}
  */
 var lengthOfLastWord = function(s) {
-    let wordArray=s.split(' ');
-    let index=wordArray.length-1;
-    while(wordArray[index]==''){
-        index--;
+    if (s.length === 0) {
+        return 0;
+    } else {
+        const words = s.trim().split(' ');
+        const lengthOfLastWord = words[words.length - 1].length;
+        return lengthOfLastWord;
     }
-    return index==-1?0:wordArray[index].length;
 };
