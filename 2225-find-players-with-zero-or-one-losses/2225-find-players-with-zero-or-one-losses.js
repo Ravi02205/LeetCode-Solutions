@@ -14,7 +14,6 @@ var findWinners = function(matches) {
         }
         arr[item[1]-1]++;
     });
-    console.log(arr);
     arr.forEach((item,index)=>{
         if(item==0){
             result[0].push(index+1);
