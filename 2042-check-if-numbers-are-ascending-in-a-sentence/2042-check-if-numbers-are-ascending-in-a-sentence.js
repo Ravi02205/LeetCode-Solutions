@@ -3,15 +3,5 @@
  * @return {boolean}
  */
 var areNumbersAscending = function(s) {
-    let arr=s.split(' ').filter(item=>!isNaN(+item));
-    let prev=arr.shift();
-    let flag=true;
-    arr.forEach(item=>{
-        console.log(+item<=+prev)
-        if(+item<=+prev && flag){
-            flag = false;
-        }
-        prev=+item;
-    });
-    return flag;
+    return s.match(/\d+/g).every((_, index, arr) => (index < arr.length - 1 ? arr[index + 1] - arr[index] > 0 : true));
 };
