@@ -3,8 +3,7 @@
  * @return {number}
  */
 var countDigits = function(num) {
-    let arr = (num+'').split('');
-    return arr.reduce((acc,item)=>{
+    return (num+'').split('').reduce((acc,item)=>{
         if(num%item == 0){
             acc=acc+1;
         }
