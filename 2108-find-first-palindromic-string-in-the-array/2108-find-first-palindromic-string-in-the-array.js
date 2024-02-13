@@ -3,12 +3,19 @@
  * @return {string}
  */
 var firstPalindrome = function(words) {
-    let str="";
-    for(let i=0;i<words.length;i++){
-        if(words[i]==words[i].split("").reverse().join("")){
-            str=words[i];
-            break;
+    const nullarr = "";
+    var length = words.length;
+    var rev;
+
+    for(var i =0;i<length;i++){
+        function palindrome(word){
+            rev = word.split('').reverse().join('')
+            return rev;
+        }
+        palindrome(words[i]);
+        if(rev==words[i]){
+            return words[i];
         }
     }
-    return str;
+    return nullarr;
 };
